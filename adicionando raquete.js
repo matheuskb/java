@@ -24,14 +24,14 @@ let velocidadeybolinha = 5;
 let xraquete = 5
 let yraquete = 150
 let comprimentoraquete = 10
-let alturaraquete = 250
+let alturaraquete = 100
 
 //variaveis raquete inimigo
 
 let xraqueteoponente = 585
 let yraqueteoponente = 150
 let comprimentoraqueteop = 10
-let alturaraqueteop = 250
+let alturaraqueteop = 100
 
 function setup() {
   
@@ -48,6 +48,8 @@ function draw()
     raqueteoponente();
     verificaColisaoRaquete();
     verificaColisaoRaqueteop();
+    movimentaraquetecima();
+    movimentaraquetebaixo();
 
 
 function mostrabolinha() {
@@ -101,5 +103,22 @@ function colisaodaborda() {
     velocidadexbolinha *= -1;
      }
    }
+  
+  function movimentaraquetecima()
+  {
+    if (keyIsDown(UP_ARROW)) {
+      yraquete -=10;
+    }
+  }
+  
+  function movimentaraquetebaixo()
+  {
+    if (keyIsDown(DOWN_ARROW)) {
+      yraquete +=10;
+    }
 }
+
+}
+
+
 
